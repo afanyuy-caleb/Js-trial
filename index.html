@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    header{
+      position: fixed;
+      background: white;
+      width: 100%;
+      height: 40px;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    div{
+      height: 100vh;
+      width: 100vw;
+      background:rgb(244, 89, 226);
+    }
+    .section2{
+      background: rgb(78, 121, 252);
+    }
+
+    header a{
+      padding: 5px;
+      text-decoration: none;
+      
+    }
+    a.active{
+      background: rgb(128, 239, 206);
+      
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Welcome to this trial
+    <a href="#one" class="one active">button 1</a>
+
+    <a href="#two" class="two">button 2</a>
+
+  </header>
+ 
+  <div class="section1 active" id="one"></div>
+  <div class="section2" id="two"></div>
+ 
+  <script>
+    // const divs = document.querySelectorAll('div');
+    // const links = document.querySelectorAll('header a');
+
+    // console.log(divs[1].offsetTop+', '+ divs[0].offsetHeight)
+    // console.log(window.scrollY)
+
+    // window.onscroll = () =>{
+
+    //   divs.forEach(div =>{
+
+    //     let top = window.scrollY;
+    //     let offset = div.offsetTop - 150;
+    //     let height = div.offsetHeight;
+    //     let id = div.getAttribute('id');
+
+    //     if(top >= offset && top < offset + height){
+
+    //       links.forEach(link => {
+
+    //         link.classList.remove('active');
+    //         document.querySelector('header a[href*='+ id +']').classList.add('active');
+
+    //       })
+    //     }
+    //   })
+
+    // }
+
+    // Working witho objects
+
+    const object1 = {
+      name : 'laptop',
+      brand: 'new',
+      producer: {
+        comp_name: 'Dell',
+        location: 'US'
+      },
+      'delivery date': '10 days',
+      Price: {
+        tax: 0.1,
+        amount: 230000,
+        get: function(){
+          return this.brand
+        }
+      }
+    }
+
+    console.log(object1.Price.get());
+    console.log(document.body.innerHTML)
+  </script>
+</body>
+</html>

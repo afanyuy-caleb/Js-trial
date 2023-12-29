@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+</head>
+<body>
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under &dollar;40 &equals; &plus;&dollar;10 shipping</p>
+  <p>Orders over &dollar;40 &equals; FREE shipping</p>
+
+  <input class="data" onkeydown="keycheck()">
+  <button onclick="calc()">Calculate</button>
+
+  <p class="result"></p>
+
+  <select name="" id="select">
+    <option value="1" selected>yes</option>
+    <option value="2">no</option>
+    <option value="3">maybe</option>
+  </select>
+
+  <script>
+
+    const result = document.querySelector('.result')
+    const select = document.querySelectorAll('option')
+
+    console.log(select[1].value)
+
+    function keycheck(){
+      if(event.key === "Enter"){
+        calc();
+      }
+    }
+    function calc(){
+      const input = document.querySelector('.data');
+      let cost = Number(input.value);
+
+      console.log(cost)
+      if(cost < 40){
+        cost += 10;
+       
+      }
+      result.innerText = `$${cost}`;
+    }
+
+
+  </script>
+  
+</body>
+</html>

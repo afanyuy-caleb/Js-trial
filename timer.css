@@ -1,0 +1,89 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-sizing: border-box;
+}
+
+body{
+  background: rgb(4, 4, 31);
+  color:rgb(97, 243, 243);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.clock{
+  font-size: 2.5em;
+  font-style: normal;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  margin-bottom: 10%;
+}
+
+.clock span{
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px rgba(97, 243, 243, 0.4);
+  left: 0%;
+  bottom: 50%;
+  transform-origin: 100px;
+  background: rgb(238, 158, 246);
+  transform: scale(1.5) rotate(calc(var(--i) * (360deg/30)));
+  animation: blink-timer linear infinite;
+  animation-delay: calc(var(--i) * (3s/30));
+
+}
+
+@keyframes blink-timer {
+  0%{
+    background: rgb(97, 243, 243);
+  }
+  25%{
+    background: transparent;
+  }
+}
+.btns{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btns .stop{
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+.btns button{
+  padding: 5px;
+  color: rgb(97, 243, 243);
+  font-size: 1.8em;
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  text-align: center;
+  border-radius: 50%;
+  border: none;
+  /* border: 1px solid rgb(238, 158, 246); */
+  transition: all 0.3s;
+}
+
+.btns button[title="Start"]{
+  height: 70px;
+  width: 70px;
+  font-size: 3em;
+}
+.btns button:hover{
+  background: rgb(97, 243, 243);
+  color:rgb(4, 4, 31);
+}
