@@ -1,85 +1,30 @@
 
-<!-- This page gets the info from the server and saves it to the JS -->
 <?php
-
-// Connect to the db
-
-$dsn = 'mysql:host=localhost; dbname=products';
-$username = "Keyz_dev";
-$password = "cream";
-
-$pdo = new PDO($dsn, $username, $password);
-
-if(!$pdo){
-  throw new PDOException($e->getMessage());
-}
-
-// Get user info
-
-$select = "SELECT * from fruits";
-$result = $pdo->query($select);
-$result = $result->fetchAll();
-
-$img_path = "../../official/my_website/images/Fruits";
-
+  include_once('cart_project.php');
 ?>
 
-<script>
-  // send db info into the JS
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generating html with JS</title>
 
-  let arrayProducts = [];
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
   
-  class Product{
-    
-    constructor(nam, pric, discoun, img){
-      this.name = nam;
-      this.price = pric;
-      this.discount = discoun;
-      this.image = img;
+ <header>
+  <p>Trial Cart</p>
+  <a href="cart.php">cart</a>
+ </header>
 
-      addToArray(this)
-    }
-    
-  }
+ <section class="images">
 
-  function addToArray(object){
+ </section>
 
-    arrayProducts.push({
-    name: object.name,
-    price: object.price,
-    discount: object.discount,
-    image: object.image
-    })
-
-  }
-
-  let image, index = 0;
-
-  <?php
-    foreach($result as $prod):
-      
-      $img = $prod['image'];
-      $len = strlen($img);
-      
-      // split the string to remove the last unknown xter
-      for($i=0; $i<$len-1; $i++){
-        $char[$i] = $img[$i];
-      }
-      
-      $img =  implode('',$char); 
-
-  ?>
-
-  product = new Product('<?= $prod['pd_name']?>', <?= $prod['price']?>, <?= $prod['discount']?>, '<?=$img?>');
   
-  <?php 
-    endforeach;
-  ?>
+  <script src="index.js"></script>
 
-  console.log(arrayProducts);
-
-</script>
-  
-<?php
-  include_once('project.php')
-?>
+</body>
+</html>

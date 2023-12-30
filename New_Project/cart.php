@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generating html with JS</title>
+  <title>Document</title>
 </head>
 <body>
-  
-  <img src="<?= $img_path?>/Orange.jpg" alt="img here" height="40px" width="40px">
-  <script src="index.js"></script>
-
+  <h1>This is the cart</h1>
 </body>
 </html>

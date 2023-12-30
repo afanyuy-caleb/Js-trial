@@ -1,0 +1,69 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-sizing: border-box;
+}
+
+body{
+  padding-top: 62px;
+  background-color: aliceblue;
+}
+header{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  color: white;
+  height: 60px;
+  width: 100%;
+  font-size: 2em;
+  top: 0;
+  right: 0;
+  background: rgb(10, 10, 33)
+
+}
+.images{
+  padding: 20px;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2%;
+}
+
+.images .image-section{
+  display: flex;
+  border: none;
+  box-shadow: 3px 3px 6px rgba(183, 180, 180, 0.7);
+  padding: 10px;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.images .image-section .image{
+  height: 200px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+}
+.image-section button{
+  background: rgb(85, 179, 237);
+  color: white;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 15px;
+  border: none;
+  transition: all 0.3s;
+}
+
+.image-section button:hover{
+  opacity: 0.8
+}
