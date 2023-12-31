@@ -22,6 +22,8 @@ $result = $result->fetchAll();
 
 $img_path = "../../official/my_website/images/Fruits";
 
+$font_path = "../../official/my_website/font/css";
+
 ?>
 
 <script>
@@ -31,27 +33,22 @@ $img_path = "../../official/my_website/images/Fruits";
   
   class Product{
     
-    constructor(nam, pric, discoun, img){
+    constructor(id, nam, pric, discoun, img){
+      this.id = id;
       this.name = nam;
       this.price = pric;
       this.discount = discoun;
       this.image = img;
 
-    }
-    
-  }
+      addToArray(this);
 
+    }    
+  }
   function addToArray(object){
 
-    arrayProducts.push({
-    name: object.name,
-    price: object.price,
-    discount: object.discount,
-    image: object.image
-    })
+    arrayProducts.push(object)
 
   }
-
   let image, index = 0;
 
   <?php
@@ -66,15 +63,14 @@ $img_path = "../../official/my_website/images/Fruits";
       }
   ?>
   
-  product = new Product('<?= $prod['pd_name']?>', <?= $prod['price']?>, <?= $prod['discount']?>, '<?=$image?>');
+  product = new Product(<?=$prod['id']?>,'<?= $prod['pd_name']?>', <?= $prod['price']?>, <?= $prod['discount']?>, '<?=$image?>');
 
-  addToArray(product);
   <?php 
     endforeach;
   ?>
 
   const string = JSON.stringify(arrayProducts);
   
-  localStorage.string = string
+  localStorage.setItem('string', string);
 </script>
   

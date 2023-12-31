@@ -10,21 +10,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generating html with JS</title>
 
-  <link rel="stylesheet" href="index.css">
+  <!-- Link to font icons -->
+  <link rel="stylesheet" href="<?=$font_path?>/all.css">
+
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
   
  <header>
   <p>Trial Cart</p>
-  <a href="cart.php">cart</a>
+
+  <a href="checkout.php" class="cart" title="cart "><i class="fas fa-camera">
+    <span id="cart_qty">0</span>
+  </i></a>
  </header>
 
  <section class="images">
 
  </section>
 
-  
-  <script src="index.js"></script>
+  <script type="module" src="scripts/index.js"></script>
 
 </body>
 </html>

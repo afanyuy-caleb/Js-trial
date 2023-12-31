@@ -1,0 +1,66 @@
+
+body{
+  display: flex;
+  gap: 2%;
+}
+.product-container{
+  flex: 0.7;
+  border: 2px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  padding: 2% 1%;
+}
+
+.product-container .item-number{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.product-container .cart-item-cont .item-display{
+  display: flex;
+  padding: 2%;
+  gap: 2%;
+  
+}
+
+.cart-item-cont .item-display img{
+  height: 200px;
+  width: 200px;
+  margin-right: 2%;
+  object-fit: cover;
+}
+
+.item-display .item-details .qty-update{
+  color: rgb(64, 64, 245);
+  cursor: pointer;
+  transition: 0.2s
+}
+
+.item-details .qty-update:hover{
+  text-decoration: underline;
+}
+
+.item-display .shipping-options{
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  
+}
+
+.item-display .shipping-options .ship-values{
+  display:flex;
+  gap: 3%;
+}
+
+.shipping-options .ship-values input{
+  width: 1.3em;
+}
+.shipping-options .ship-values .ship-option{
+  color: rgb(192, 179, 179)
+}
+.Price-Calculation{
+  flex: 0.3;
+  height: 300px;
+  border: 1px solid lightgray;
+
+}

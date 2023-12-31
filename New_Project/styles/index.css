@@ -24,6 +24,27 @@ header{
   background: rgb(10, 10, 33)
 
 }
+
+header .cart i{
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.cart i span{
+  position: absolute;
+  top: -20%;
+  right: -25%;
+  background: red;
+  border-radius: 50%;
+  padding: 2px;
+  height: 23px;
+  width: 23px;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 .images{
   padding: 20px;
   display: grid;
@@ -54,6 +75,10 @@ header{
   object-position: center;
 
 }
+
+#pd_qty{
+  width: 20%;
+}
 .image-section button{
   background: rgb(85, 179, 237);
   color: white;
@@ -62,8 +87,37 @@ header{
   border-radius: 15px;
   border: none;
   transition: all 0.3s;
+  font-size: 1.05em;
 }
 
 .image-section button:hover{
   opacity: 0.8
+}
+
+.image-section button.active{
+  background: violet;
+}
+
+
+@media (max-width: 1000px) and (min-width: 851px) {
+  .images{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 850px) and (min-width: 550px) {
+  .images{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 549px) and (min-width: 401px) {
+  .images{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px){
+  .images{
+    grid-template-columns: 1fr;
+  }
 }
